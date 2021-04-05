@@ -5,7 +5,6 @@ import java.lang.*;
 public class ReverseDigits {
   public static void main(String args[]) throws IOException {
 
-    //write your code here
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     Integer input = Integer.valueOf(br.readLine());
     StringBuilder sb = new StringBuilder(String.valueOf(input));
