@@ -7,12 +7,12 @@ public class LonelyInteger{
   static int getLonelyInteger(int[] array) {
         int lonelyInteger=0;
         for(int i=0;i<array.length;i++){
-           lonelyInteger = lonelyInteger^array[i]; 
+           lonelyInteger = lonelyInteger^array[i];
         }
         return lonelyInteger;
 
     }
-  public static void main(String[] args){
+  public static void main(String[] args) throws IOException{
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     System.out.println("Enter the number of elements");
     Integer number = Integer.valueOf(br.readLine());
