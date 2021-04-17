@@ -5,7 +5,11 @@ public class CountPairSumWithDuplicates{
   static int getPairCountWithDuplicates(int[] array,int sum){
     int counter =0;
     Map<Integer,Integer> hashMap = new HashMap<>();
+
     for(int each : array){
+      if(hashMap.containsKey(sum-each)){
+        counter +=hashMap.get(sum-each);
+      }
       if(hashMap.containsKey(each)){
         hashMap.put(each,hashMap.get(each)+1);
       }
@@ -13,15 +17,7 @@ public class CountPairSumWithDuplicates{
         hashMap.put(each,1);
       }
     }
-    for(int each : array){
-      if(hashMap.containsKey(sum-each)){
-        counter +=hashMap.get(sum-each);
-        if(sum-each == each){
-          counter--;
-        }
-      }
-    }
-    return counter/2;
+    return counter;
   }
 
   public static void main(String[] args) throws IOException{
