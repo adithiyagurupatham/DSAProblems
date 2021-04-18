@@ -1,3 +1,6 @@
+/**
+This algorithm is used to find the count of set bit in a given number
+*/
 import java.util.*;
 import java.io.*;
 public class BrianKerningamAlgorithm{
