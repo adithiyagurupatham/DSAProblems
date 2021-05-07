@@ -1,3 +1,8 @@
+/**
+ Given a row sorted 2D binary array find the row with maximum number of 1's
+ Link : https://practice.geeksforgeeks.org/problems/row-with-max-1s0023/1
+ Time Complexity : O(rows*log(columns))
+*/
 import java.io.*;
 public class MaxRowsWithOnesBinarySearch{
 
