@@ -1,23 +1,24 @@
 /**
 Find the duplicate element in the array of integers in the range [1,n]
 Link : https://leetcode.com/problems/find-the-duplicate-number/
-Space Complexity : O(1)
-Time Complexity : O(NLogN)
+Space Complexity : O(N)
+Time Complexity : O(N)
 */
 import java.io.*;
 import java.util.*;
-public class DuplicateElementsSorting{
+public class DuplicateElementsSet{
   static int getDuplicate(int[] nums){
-    Arrays.sort(nums);
-        for(int i=0;i<nums.length-1;i++){
-            if(nums[i]==nums[i+1]){
-                return nums[i];
+    Set<Integer> set = new HashSet<>();
+        for(int each : nums){
+            if(set.contains(each)){
+                return each;
             }
+            set.add(each);
         }
         return -1;
   }
 
-  public static void main(String[] args) throws IOException{
+  public static void main(String[] args)  throws IOException{
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     System.out.println("Enter the input size");
     Integer size = Integer.valueOf(br.readLine());
