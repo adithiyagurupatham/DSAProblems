@@ -5,7 +5,7 @@
 import java.util.*;
 import java.io.*;
 public class StairCase{
-  public static void main(String[] args){
+  public static void main(String[] args) throws IOException{
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     Integer input = Integer.valueOf(br.readLine());
     System.out.println(getPossibleWays(input));
