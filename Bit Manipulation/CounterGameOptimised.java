@@ -30,7 +30,7 @@ public class CounterGameOptimised{
   public static void main(String[] args) throws IOException{
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     System.out.println("Enter the input");
-    Integer input  = Integer.valueOf(br.readLine());
+    Long input  = Long.valueOf(br.readLine());
     System.out.println("The winner of the game is "+counterGame(input));
   }
 }
