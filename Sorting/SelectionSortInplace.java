@@ -1,5 +1,7 @@
 /**
 Sort the array using in place selection sort algorithm
+Time Complexity : O(n*n)
+Space Complexity : O(1)
 */
 import java.io.*;
 public class SelectionSortInplace{
