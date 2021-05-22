@@ -15,10 +15,10 @@ public class MaximumRopeCut{
     int ans = Math.max(getMaxCut(size-firstCut,firstCut,secondCut,thirdCut),
           Math.max(getMaxCut(size-secondCut,firstCut,secondCut,thirdCut),
           getMaxCut(size-thirdCut,firstCut,secondCut,thirdCut)));
-    if(ans==0){
-      return -1;
+    if(ans!=-1){
+      return ans+1;
     }
-    return ans+1;
+    return -1;
 
   }
 
