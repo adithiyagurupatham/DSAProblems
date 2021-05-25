@@ -1,21 +1,27 @@
 /**
 Sort the array using bubble sort
-Time Complexity : Best Case : O(n)
+Time Complexity : Best Case : O(1)
                   Avg Case  : O(n^2)
-                  Worst Case: O(n^2) 
+                  Worst Case: O(n^2)
 */
 import java.io.*;
-public class BubbleSort{
+public class BubbleSortCaseBreak{
   static void sort(int[] array){
     int n = array.length;
+    boolean isSorted = true;
     for(int i=0;i<n-1;i++){
+      isSorted=true;
       for(int j=0;j<(n-i-1);j++)
       {
           if(array[j]>array[j+1]){
             int temp = array[j];
             array[j]=array[j+1];
             array[j+1]=temp;
+            isSorted=false;
           }
+      }
+      if(isSorted){
+        break;
       }
     }
   }
