@@ -1,6 +1,6 @@
 /**
 Sort the array using bubble sort
-Time Complexity : Best Case : O(1)
+Time Complexity : Best Case : O(n)
                   Avg Case  : O(n^2)
                   Worst Case: O(n^2)
 */
