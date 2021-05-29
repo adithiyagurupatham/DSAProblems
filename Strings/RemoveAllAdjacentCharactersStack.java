@@ -2,7 +2,7 @@
  Program to remove all adjacent characters
  Link : https://www.geeksforgeeks.org/remove-first-adjacent-pairs-of-similar-characters-until-possible/
  Time Complexity : O(n) (i.e) we do the deletion of characters at tail
- Space Complexity : O(1)
+ Space Complexity : O(n)
 */
 import java.io.*;
 import java.util.*;
