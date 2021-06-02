@@ -1,8 +1,8 @@
 /**
 Program to check if only unique characters are present in the string
 Link : https://www.geeksforgeeks.org/determine-string-unique-characters/
-Time Complexity : O(NlogN)
-SPace Complexity : O(1)
+Time Complexity : O(N)
+SPace Complexity : O(256)
 */
 import java.io.*;
 import java.util.*;
