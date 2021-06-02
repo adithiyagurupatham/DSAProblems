@@ -12,6 +12,9 @@ public class UniqueCharacterStringASCII{
 
   static boolean isUniqueCharacterString(String input){
     CHAR_COUNT=256;
+    if(input.length()>CHAR_COUNT){
+      return false;
+    }
     boolean[] booleanArray = new boolean[CHAR_COUNT];
     Arrays.fill(booleanArray,false);
     char[] charArray = input.toCharArray();
