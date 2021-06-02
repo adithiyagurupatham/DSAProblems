@@ -1,28 +1,22 @@
 /**
 Program to check if only unique characters are present in the string
 Link : https://www.geeksforgeeks.org/determine-string-unique-characters/
+Works only with characters a to z
 Time Complexity : O(N)
-SPace Complexity : O(256)
+SPace Complexity : O(1)
 */
 import java.io.*;
 import java.util.*;
-public class UniqueCharacterStringASCII{
-
-  static int CHAR_COUNT;
+public class UniqueCharacterStringBit{
 
   static boolean isUniqueCharacterString(String input){
-    CHAR_COUNT=256;
-    if(input.length()>CHAR_COUNT){
-      return false;
-    }
-    boolean[] booleanArray = new boolean[CHAR_COUNT];
-    Arrays.fill(booleanArray,false);
-    char[] charArray = input.toCharArray();
-    for(char each : charArray){
-      if(booleanArray[each]){
+    int checker=0;
+    for(int i=0;i<input.length();i++){
+      int index = input.charAt(i)-'a';
+      if((checker&(1<<index))>0){
         return false;
       }
-      booleanArray[each]=true;
+      checker|=(1<<index);
     }
     return true;
   }
