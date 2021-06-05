@@ -1,20 +1,14 @@
 /**
  Program to find first non repeating character
- Complexity : O(n)
+ Complexity : O(n^2)
 */
 import java.io.*;
-import java.util.*;
-public class FirstNonRepeatingCharacterOptimized{
+public class FirstNonRepeatingCharacterShorterCode{
 
   static Character getFirstNonRepeatingCharacter(String input){
-    Map<Character,Integer> hashMap = new HashMap<>();
-    char[] charArray = input.toCharArray();
-    for(Character each : charArray){
-      hashMap.merge(each,1,Integer::sum);
-    }
-    for(Character each : charArray){
-      if(hashMap.get(each)==1){
-        return each;
+    for(int i=0;i<input.length();i++){
+      if(input.indexOf(input.charAt(i)) == input.lastIndexOf(input.charAt(i))){
+        return input.charAt(i);
       }
     }
     return '_';
