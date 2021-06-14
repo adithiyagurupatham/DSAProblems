@@ -1,22 +1,18 @@
 /**
 Program to remove duplicates from sorted array
 Time Complexity : O(n)
-Space Complexity : O(n)
+Space Complexity : O(1)
 */
 import java.io.*;
-public class RemoveDuplicatesSortedArray{
+public class RemoveDuplicatesSortedArrayOptimal{
 
   static int removeDuplicates(int[] array){
     int[] temp = new int[array.length];
     int res=0;
-    temp[res]=array[res];
     for(int i=1;i<array.length;i++){
-      if(temp[res]!=array[i]){
-        temp[++res]=array[i];
+      if(array[res]!=array[i]){
+        array[++res]=array[i];
       }
-    }
-    for(int i=0;i<array.length;i++){
-      array[i]=temp[i];
     }
     return res+1;
   }
