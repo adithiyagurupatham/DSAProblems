@@ -1,6 +1,6 @@
 /**
 Program to find the maximum value of arr[j]-arr[i] such that j>i
-Time Complexity : O(N^2)
+Time Complexity : O(N)
 Space Complexity : O(1)
 */
 import java.io.*;
