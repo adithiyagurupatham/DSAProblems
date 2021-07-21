@@ -1,10 +1,11 @@
 /**
 Program to find the celebrity
-Time Complexity : O(N^2)
-Space Complexity : O(1)
+Time Complexity : O(N)
+Space Complexity : O(N)
 */
 import java.io.*;
-public class CelebrityProblemNormal{
+import java.util.*;
+public class CelebrityProblemOptimal{
   // static void print(int[][] array){
   //   for(int i=0;i<array.length;i++){
   //     for(int j=0;j<array[i].length;j++){
@@ -13,9 +14,16 @@ public class CelebrityProblemNormal{
   //     System.out.println();
   //   }
   // }
-  boolean iSCompleteZero(int row,int[][]M){
-        for(int i=0;i<M[row].length;i++){
-            if(M[row][i]==1){
+  int pushAgain(int M[][],int a,int b){
+        if(M[a][b]==1){
+            return b;
+        }
+        return a;
+    }
+
+    boolean isCelebrity(int M[][],int val){
+        for(int i=0;i<M[val].length;i++){
+            if(M[val][i]==1){
                 return false;
             }
         }
@@ -33,15 +41,30 @@ public class CelebrityProblemNormal{
         return true;
     }
 
-   int celebrity(int M[][], int n)
+    int celebrity(int M[][], int n)
     {
     	if(isZero(M)){
     	    return -1;
     	}
-    	for(int i=0;i<M.length;i++){
-    	    if(iSCompleteZero(i,M)){
-    	        return i;
-    	    }
+    	Stack<Integer> stack = new Stack<>();
+    	for(int i=0;i<n;i++){
+    	    stack.push(i);
+    	}
+    	int count=1;
+    	while(count<n){
+    	    int a = stack.pop();
+    	    int b = stack.pop();
+    	    int ans = pushAgain(M,a,b);
+    	    stack.push(ans);
+    	    count++;
+    	}
+    	if(stack.isEmpty()){
+    	    return -1;
+    	}
+    	int ans = stack.pop();
+    	boolean fin =  isCelebrity(M,ans);
+    	if(fin){
+    	    return ans;
     	}
     	return -1;
     }
