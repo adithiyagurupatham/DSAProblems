@@ -2,24 +2,29 @@
 Program to rearrange the array as max-min combo
 Link : http://practice.geeksforgeeks.org/problems/-rearrange-array-alternately-1587115620/1
 Time Complexity : O(N)
-Space Complexity : O(N)
+Space Complexity : O(1)
 */
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-public class AlternateArrangementNormal{
+public class AlternateArrangementOptimal{
   static void rearrange(int arr[], int n){
-        int[] temp = new int[n];
-        int left=0,right=n-1,i=0;
-        while(left<=right){
-            temp[i++]=arr[right--];
-            if(i==n){
-                break;
-            }
-            temp[i++] = arr[left++];
+    int left=0,right=n-1,max=arr[n-1]+1;
+    for(int i=0;i<n;i++){
+        if(i%2==0){
+            //even
+            int temp = (arr[right]*max);
+            arr[i]+=((arr[right]%max)*max);
+            right--;
         }
-        for(int j=0;j<n;j++)
-            arr[j]=temp[j];
+        else{
+            arr[i]+=((arr[left]%max)*max);
+            left++;
+        }
+    }
+    for(int i=0;i<n;i++){
+        arr[i]=arr[i]/max;
+    }
 
     }
   public static void main(String[] args) throws IOException{
