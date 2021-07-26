@@ -18,13 +18,13 @@ public class SegregatePositiveNegative{
       while(left<n && array[left]>0){
         left++;
       }
-      if(left>=n-1){
+      if(left >= right || left>=n-1){
         break;
       }
-      while(right>0 && array[right]<0){
+      while(right>0 && array[right]<=0){
         right--;
       }
-      if(right<=0){
+      if(left >= right || right<=0){
         break;
       }
       swap(array,left,right);
