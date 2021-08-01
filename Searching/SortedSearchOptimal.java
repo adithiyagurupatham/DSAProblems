@@ -1,17 +1,25 @@
 /**
 Program to find the index of the given value in sorted array
-Time Complexity : O(N)
+Time Complexity : O(logN)
 Space Complexity : O(1)
 */
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-public class SortedSearchNormal{
+public class SortedSearchOptimal{
 
   static int findValue(int[] array,int val){
-    for(int i=0;i<array.length;i++){
-      if(array[i]==val){
-        return i;
+    int low=0,high=array.length-1;
+    while(low<=high){
+      int mid = low+((high-low)/2);
+      if(array[mid]==val){
+        return mid;
+      }
+      if(array[mid]>val){
+        high = mid-1;
+      }
+      else{
+        low = mid+1;
       }
     }
     return -1;
