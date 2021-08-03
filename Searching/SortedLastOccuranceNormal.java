@@ -9,13 +9,12 @@ import java.io.InputStreamReader;
 public class SortedLastOccuranceNormal{
 
   static int findValue(int[] array,int val){
-    int ans=-1;
-    for(int i=0;i<array.length;i++){
+    for(int i=array.length-1;i>=0;i--){
       if(array[i]==val){
-        ans=i;
+        return i;
       }
     }
-    return ans;
+    return -1;
   }
 
   public static void main(String[] args) throws IOException{
@@ -30,6 +29,6 @@ public class SortedLastOccuranceNormal{
     }
     System.out.println("Enter the value to be searched");
     Integer value = Integer.valueOf(br.readLine());
-    System.out.println("The index of the first occured value is "+findValue(array,value));
+    System.out.println("The index of the last occured value is "+findValue(array,value));
   }
 }
