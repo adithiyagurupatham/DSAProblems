@@ -1,3 +1,8 @@
+/**
+Program to check if there exist the sum pair in the given sorted array
+Time Complexity : O(logN)
+Space Complexity : O(1)
+*/
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
