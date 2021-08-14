@@ -2,33 +2,29 @@
 Program to return the repetitive element and its count in the consecutive sorted array
 Link : https://practice.geeksforgeeks.org/problems/count-only-repeated2047/1
 Time Complexity : O(N)
-Space Complexity : O(N)
+Space Complexity : O(1)
 */
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.awt.Point;
-import java.util.Set;
-import java.util.HashSet;
-public class CountOnlyRepeatedNormal{
+public class CountOnlyRepeatedOptimal{
 
   static Point findRepeating(int arr[],int n)
     {
-        Set<Integer> set = new HashSet<>();
-        int counter=0,element=-1;
-        for(int each : arr){
-            if(set.contains(each)){
-                element = each;
-                counter++;
-            }
-            else{
-                set.add(each);
+        boolean isRepetitive=false;
+        int repetitiveCount=1,repetitiveElement=-1;
+        for(int i=1;i<n;i++){
+            if(arr[i]-arr[i-1]==0){
+                isRepetitive=true;
+                repetitiveCount++;
+                repetitiveElement=arr[i];
             }
         }
-        if(element==-1){
-            counter=-1;
+        if(!isRepetitive){
+            return new Point(-1,-1);
         }
-        return new Point(element,counter+1);
+        return new Point(repetitiveElement,repetitiveCount);
 
     }
 
