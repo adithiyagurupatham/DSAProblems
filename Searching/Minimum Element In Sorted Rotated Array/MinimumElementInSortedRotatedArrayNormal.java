@@ -1,3 +1,9 @@
+/**
+Program to find the minimum element in the sorted rotated array
+Link : https://practice.geeksforgeeks.org/problems/minimum-number-in-a-sorted-rotated-array-1587115620/1
+Time Complexity : O(N)
+Space Complexity : O(1)
+*/
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
