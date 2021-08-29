@@ -1,6 +1,6 @@
 /**
-Program to print the intersection of two sorted arrays
-Time Complexity : (m+n)
+Program to print the union of two sorted arrays
+Time Complexity : (m+n log(m+n))
 Space Complexity : O(1)
 */
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 public class TwoSortedArraysUnionNormal{
 
-  static void printIntersection(int[] array,int[] array1){
+  static void printUnion(int[] array,int[] array1){
     int[] temp = new int[array.length + array1.length];
     for(int i=0;i<array.length;i++){
       temp[i] = array[i];
@@ -45,6 +45,6 @@ public class TwoSortedArraysUnionNormal{
       array1[i] = Integer.valueOf(inputString[i]);
     }
     System.out.println("The union of two sorted arrays are ");
-    printIntersection(array, array1);
+    printUnion(array, array1);
   }
 }
