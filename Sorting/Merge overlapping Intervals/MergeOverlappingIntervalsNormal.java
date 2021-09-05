@@ -2,7 +2,7 @@
 Program to print the non - overlapping intervals of the array
 Link : https://www.geeksforgeeks.org/merging-intervals/
 Time Complexity : O(NlogN)
-Space Complexity : O(N)
+Space Complexity : O(1)
 */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
