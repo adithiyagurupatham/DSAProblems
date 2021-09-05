@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Stack;
+import java.lang.Math;
 class Interval implements Comparable<Interval>{
   int s;
   int e;
@@ -28,26 +29,22 @@ class Interval implements Comparable<Interval>{
 
 }
 
-public class MergeOverlappingIntervalsNormal{
+public class MergeOverlappingIntervalsOptimal{
   static void findOverlappingIntervals(Interval[] arr)
     {
       Arrays.sort(arr);
-      Stack<Interval> stack = new Stack<>();
-      stack.push(arr[0]);
+      int res=0;
       for(int i=1;i<arr.length;i++){
-        Interval top = stack.peek();
-        if(top.e >= arr[i].s){
-          top.e = Math.max(top.e,arr[i].e);
-          stack.pop();
-          stack.push(top);
+        if(arr[res].e >=arr[i].s){
+          arr[res].e = Math.max(arr[res].e,arr[i].e);
         }
         else{
-          stack.push(arr[i]);
+          res++;
+          arr[res]=arr[i];
         }
       }
-      while(!stack.isEmpty()){
-        Interval t = stack.pop();
-        System.out.print("["+t.s+","+t.e+"] ");
+      for(int t=0;t<=res;t++){
+        System.out.print("["+arr[t].s+","+arr[t].e+"] ");
       }
       System.out.println();
     }
