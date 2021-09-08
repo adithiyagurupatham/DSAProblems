@@ -1,7 +1,7 @@
 /**
 Program to check if there is a triplet zero sum exist or not
 Link : https://practice.geeksforgeeks.org/problems/find-triplets-with-zero-sum/1/
-Time Complexity : O(N^3)
+Time Complexity : O(N^2)
 Space Complexity : O(1)
 */
 import java.io.IOException;
