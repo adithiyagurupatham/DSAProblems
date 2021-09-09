@@ -1,5 +1,6 @@
 /**
 Program to count possible triangle count
+Link : https://practice.geeksforgeeks.org/problems/count-possible-triangles-1587115620/1/
 Time Complexity : O(N^3)
 Space Complexity : O(1)
 */
