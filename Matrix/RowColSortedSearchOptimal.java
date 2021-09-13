@@ -1,24 +1,30 @@
 /**
 Program to search an element in row sorted and column sorted matrix
 Link : https://practice.geeksforgeeks.org/problems/search-in-a-matrix-1587115621/1/
-Time Complexity : O(row*col log(col))
+Time Complexity : O(row+col)
 Space Complexity : O(1)
 */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.Arrays;
-public class RowColSortedSearch{
+public class RowColSortedSearchOptimal{
 
   static boolean search(int matrix[][], int n, int m, int x)
 	{
-	    for(int i=0;i<n;i++){
-	        int idx = Arrays.binarySearch(matrix[i],x);
-	        if(idx>=0){
-	            return true;
-	        }
-	    }
-	    return false;
+    int i=0,j=m-1;
+    while(i<n && j>=0){
+        if(matrix[i][j] == x){
+            return true;
+        }
+        else if(matrix[i][j]>x){
+            j--;
+        }
+        else{
+            i++;
+        }
+    }
+    return false;
 	}
 
   public static void main(String[] args) throws IOException{
