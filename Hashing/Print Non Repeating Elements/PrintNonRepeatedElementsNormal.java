@@ -1,7 +1,7 @@
 /**
 Program to print the non - repeating elements in the given array
 Link : https://practice.geeksforgeeks.org/problems/print-distinct-elements-1587115620/1/
-Time Complexity : O(N^2)
+Time Complexity : O(N)
 Space Complexity : O(N)
 */
 import java.io.BufferedReader;
