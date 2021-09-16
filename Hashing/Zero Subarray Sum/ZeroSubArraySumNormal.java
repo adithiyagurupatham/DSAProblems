@@ -1,5 +1,6 @@
 /**
 Program to check if subarray sum equals zero or not
+Link : https://practice.geeksforgeeks.org/problems/subarray-with-0-sum-1587115621/1/
 Time Complexity : O(N^2)
 Space Complexity : O(1)
 */
