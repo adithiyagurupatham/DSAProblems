@@ -1,6 +1,6 @@
 /**
 Program to find the count of subarray  with equal number of 1's and 0's
-Link : https://practice.geeksforgeeks.org/problems/largest-subarray-of-0s-and-1s/1
+Link : https://practice.geeksforgeeks.org/problems/count-subarrays-with-equal-number-of-1s-and-0s-1587115620/1/
 Time Complexity : O(N^2)
 Space Complexity : O(1)
 */
