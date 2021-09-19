@@ -28,5 +28,6 @@ public class MinimumChangesStrictlyIncreasing{
     for(int i=0;i<size;i++){
       array[i] = Integer.valueOf(inputString[i]);
     }
+    System.out.println("The minimum changes required is "+getMinimumChanges(array));
   }
 }
