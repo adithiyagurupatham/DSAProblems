@@ -10,19 +10,18 @@ import java.util.List;
 import java.util.ArrayList;
 public class PrintSubsequence{
 
-  static List<String> ans = new ArrayList<>();
 
-  static void printSubsequence(String str,String temp)
+  static void printSubsequence(String str,String temp,List<String> ans)
   {
     if(str.length()==0 ){
       if(temp.length()>0){
           ans.add(temp);
       }
-      return;
+      return ;
     }
 
-    printSubsequence(str.substring(1), temp);
-    printSubsequence(str.substring(1), temp+str.charAt(0));
+    printSubsequence(str.substring(1), temp,ans);
+    printSubsequence(str.substring(1), temp+str.charAt(0),ans);
 
   }
 
@@ -32,7 +31,8 @@ public class PrintSubsequence{
       System.out.println("Enter the  text");
       String str = br.readLine();
       System.out.println("The subsequence of the string are ");
-      printSubsequence(str, "");
+      List<String> ans = new ArrayList<>();
+      printSubsequence(str, "",ans);
       System.out.println(ans);
   }
 
