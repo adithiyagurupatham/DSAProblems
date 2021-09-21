@@ -1,7 +1,7 @@
 /**
 Program to check if both the given strings are anagram/not
 Link : https://practice.geeksforgeeks.org/problems/anagram-1587115620/1/
-Time Complexity : O(NlogN)
+Time Complexity : O(N)
 Space Complexity : O(1)
 */
 import java.io.IOException;
