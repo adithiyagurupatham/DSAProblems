@@ -2,7 +2,7 @@
 Program to reverse all individual words of the string seperated by dot
 Link : https://practice.geeksforgeeks.org/problems/reverse-words-in-a-given-string5459/1/
 Time Complexity : O(N)
-Space Complexity : O(N)
+Space Complexity : O(1)
 */
 import java.io.IOException;
 import java.io.BufferedReader;
