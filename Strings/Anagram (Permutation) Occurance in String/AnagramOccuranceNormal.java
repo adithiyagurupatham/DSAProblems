@@ -1,5 +1,5 @@
 /**
-Program to count the total count of anagrams present in the string
+Program to check if the permutation/anagram of the pattern is present in the string
 Link : https://www.geeksforgeeks.org/anagram-substring-search-search-permutations/
 Time Complexity : O((n-m+1)*m)
 Space Complexity : O(1)
