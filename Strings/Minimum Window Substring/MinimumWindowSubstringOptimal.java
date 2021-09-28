@@ -1,14 +1,14 @@
 /**
-Program to minimum length substring which contains all
+Program to minimum length substring which contains all characters of pattern
 Link : https://practice.geeksforgeeks.org/problems/longest-distinct-characters-in-string5848/0/
-Time Complexity : O(N^2)
+Time Complexity : O(N+M)
 Space Complexity : O(1)
 */
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-public class MinimumWindowSubstringNormal{
+public class MinimumWindowSubstringOptimal{
 
   static boolean isPresent(int[] count,int[] pat)
     {
@@ -21,8 +21,9 @@ public class MinimumWindowSubstringNormal{
         return true;
     }
 
-   static String smallestWindow(String s, String p)
+    public static String smallestWindow(String s, String p)
     {
+        // Your code here
         int[] pat = new int[256];
         int[] count = new int[256];
         int min = Integer.MAX_VALUE;
@@ -32,22 +33,23 @@ public class MinimumWindowSubstringNormal{
         {
             pat[p.charAt(i)]++;
         }
-        for(int i=0;i<=s.length()-p.length();i++)
+        for(int l=0,r=0;r<s.length();r++)
         {
-            for(int j=i;j<s.length();j++)
+            count[s.charAt(r)]++;
+            if(isPresent(count,pat))
             {
-                count[s.charAt(j)]++;
-                if(isPresent(count,pat))
+                while(l<=r && isPresent(count,pat))
                 {
-                    if((j-i+1)<min)
+                    if(r-l+1<min)
                     {
-                        minI = i;
-                        minJ = j;
-                        min = j-i+1;
+                        min = r-l+1;
+                        minI = l;
+                        minJ = r;
                     }
+                    count[s.charAt(l)]--;
+                    l++;
                 }
             }
-            Arrays.fill(count,0);
         }
         return (min== Integer.MAX_VALUE)?"-1":s.substring(minI,minJ+1);
     }
