@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 class LinkedListCreationStatic
 {
-  static class Node{
+  private static class Node{
     private Integer data;
     private Node next;
     Node(int data)
