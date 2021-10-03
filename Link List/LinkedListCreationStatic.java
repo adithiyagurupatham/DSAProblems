@@ -36,7 +36,6 @@ class LinkedListCreationStatic
     System.out.println("Enter the count of values");
     Integer n = Integer.valueOf(br.readLine());
     System.out.println("Enter the values");
-    LinkedListCreationNonStatic list = new LinkedListCreationNonStatic();
     int val = Integer.valueOf(br.readLine());
     Node head = new Node(val);
     Node temp = head;
