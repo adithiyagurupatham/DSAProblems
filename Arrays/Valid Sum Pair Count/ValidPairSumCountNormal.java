@@ -9,38 +9,18 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.Arrays;
 public class ValidPairSumCountNormal{
-  static int findVal(int[] arr,int val,int low,int high)
-    {
-        int ans = -1;
-        while(low<=high)
-        {
-            int mid = low + ((high-low)/2);
-            if(arr[mid]+val<=0)
-            {
-                low = mid+1;
-            }
-            else
-            {
-                ans = mid;
-                high = mid-1;
-            }
-        }
-        // System.out.println("val is "+ans);
-        return ans;
-    }
+
 
     static long validPairCount(int a[], int n)
 	{
 	    // Your code goes here
-	    long ans=0;
-	    Arrays.sort(a);
-	   // System.out.println("Arr is "+Arrays.toString(a));
+      long ans=0;
 	    for(int i=0;i<n;i++)
 	    {
-	        int val = findVal(a,a[i],i+1,n-1);
-	        if(val>0)
+	        for(int j=i+1;j<n;j++)
 	        {
-	            ans+=(n-val);
+	            if((a[i] + a[j])>0)
+	                ans++;
 	        }
 	    }
 	    return ans;
