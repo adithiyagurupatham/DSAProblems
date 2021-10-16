@@ -18,39 +18,16 @@ class PalindromeCheckNormal
     }
   }
 
-  static Node getMiddle(Node curr){
-        Node slow=curr,fast=curr;
-        while(fast!=null && fast.next!=null){
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-        return slow;
-    }
-
-  static Node reverse(Node mid){
-        Node prev=null,curr=mid;
-        while(curr!=null){
-            Node temp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = temp;
-        }
-        return prev;
-    }
-
-    static boolean isPalindrome(Node head)
+  static boolean isPalindrome(Node head)
     {
-        Node mid = getMiddle(head);
-        mid = reverse(mid);
+        //Your code here
+        StringBuilder sb = new StringBuilder();
         Node curr = head;
-        while(mid!=null){
-            if(mid.data!=curr.data){
-                return false;
-            }
-            mid = mid.next;
+        while(curr!=null){
+            sb.append(curr.data);
             curr = curr.next;
         }
-        return true;
+        return sb.toString().equals(sb.reverse().toString());
     }
 
   public static void main(String[] args) throws IOException{
